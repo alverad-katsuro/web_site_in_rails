@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @noticium.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @noticium.author %>
+</p>
+
+<%= link_to 'Edit', edit_noticium_path(@noticium) %> |
+<%= link_to 'Back', noticia_path %>

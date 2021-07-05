@@ -64,6 +64,6 @@ class NoticiaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def noticium_params
-      params.require(:noticium).permit(:title, :author)
+      params.require(:noticium).permit(:title, :author, :featured_image, :content)
     end
 end

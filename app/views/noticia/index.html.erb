@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="control">
+    <%= link_to 'New Noticium', new_noticium_path, class: 'button is-link is-medium is-fullwidth' %>
+</div>
 
-<h1>Noticia</h1>
+  <p id="notice"><%= notice %></p>
 
 <table>
   <thead>
@@ -12,18 +14,29 @@
   </thead>
 
   <tbody>
+  
+    </br></br>
+    <h1 class="title">Publicações</h1>
+    </br>
+
     <% @noticia.each do |noticium| %>
-      <tr>
-        <td><%= noticium.title %></td>
-        <td><%= noticium.author %></td>
-        <td><%= link_to 'Show', noticium %></td>
-        <td><%= link_to 'Edit', edit_noticium_path(noticium) %></td>
-        <td><%= link_to 'Destroy', noticium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Noticium', new_noticium_path %>
+      <div class="columns">
+        <div class="column is-four-fifths">
+                <div class="card">
+            <div class="card-image">
+              <figure class="image is-full is-marginless is-3by1">
+                <%= image_tag noticium.featured_image%>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <a href="<%= noticium_path(id: noticium.id) %>"><p class="title is-4"><%= noticium.author %></p></a>
+                </div>
+              </div>
+              <p>Autor: <%= noticium.author %> - <%= noticium.created_at.strftime("%d/%m/%Y") %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+<% end %>

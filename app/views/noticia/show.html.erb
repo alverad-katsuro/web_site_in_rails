@@ -1,14 +1,48 @@
-<p id="notice"><%= notice %></p>
+</br></br>
 
-<p>
-  <strong>Title:</strong>
-  <%= @noticium.title %>
-</p>
+<div class="field has-addons" id='edit_back_destroy'>
+    <div class="control">
+      <%= link_to 'Edit', edit_noticium_path(@noticium), class: 'button is-link' %>
+    </div>
+    <div class="control">
+      <%= link_to 'Back', noticia_path, class: 'button is-link is-light' %>
+    </div>
+    <div class="control">
+      <%= link_to 'Destroy', @noticium, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-link is-danger ' %>
+    </div>
+</div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @noticium.author %>
-</p>
+</br></br>
+<figure class="image is-3by1">
+  <%= image_tag @noticium.featured_image %>
+</figure></br>
 
-<%= link_to 'Edit', edit_noticium_path(@noticium) %> |
-<%= link_to 'Back', noticia_path %>
+<div id='bloco_do_artigo' class='container is-max-desktop'>
+  <section id='corpo_do_artigo'>
+    <div class="columns">
+      <div class="column">
+        <p class="title"><%= @noticium.title %></p>
+      </div>
+    </div>
+
+    </br></br>
+
+    <div class="columns">
+      <div class="container is-max-desktop"><%= @noticium.content %>
+    </div>
+  </section>
+</div>
+
+    </br></br>
+
+<div class="field has-addons" id='botao_show_bot'>
+  <div class="control">
+    <%= link_to 'Edit', edit_noticium_path(@noticium), class: 'button is-link' %>
+  </div>
+  <div class="control">
+    <%= link_to 'Back', noticia_path, class: 'button is-link is-light' %>
+  </div>
+  <div class="control">
+    <%= link_to 'Destroy', @noticium, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-link is-danger ' %>
+  </div>
+</div>

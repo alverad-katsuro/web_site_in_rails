@@ -18,11 +18,11 @@
         <a class="navbar-item" href='<%= root_path %>'>Visitors</a>
         <a class="navbar-item" href='<%= root_path %>'>Join Us</a>
         <a class="navbar-item" href='<%= root_path %>'>Contact</a>
-        <a class="navbar-item" href='<%= root_path %>'>About</a>
+        <a class="navbar-item" href='<%= abouts_path %>'>About</a>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="buttons">
+          <div class="buttons" id='signs'>
             <% unless user_signed_in? %>
               <a class="button is-primary" href='/users/sign_up'>
                 <strong>Cadastre-se</strong>

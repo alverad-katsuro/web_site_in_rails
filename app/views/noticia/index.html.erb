@@ -1,23 +1,14 @@
-<div class="control">
+    </br></br>
+
+<% if user_signed_in? %>
     <%= link_to 'New Noticium', new_noticium_path, class: 'button is-link is-medium is-fullwidth' %>
-</div>
-
-  <p id="notice"><%= notice %></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% end %>
 
   <tbody>
   
-    </br></br>
-    <h1 class="title">Publicações</h1>
-    </br>
+    <br>
+    <p class="title">News</p>
+    <br>
 
     <% @noticia.each do |noticium| %>
       <div class="columns">
@@ -31,7 +22,7 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <a href="<%= noticium_path(id: noticium.id) %>"><p class="title is-4"><%= noticium.author %></p></a>
+                  <a href="<%= noticium_path(id: noticium.id) %>"><h1 class="title is-4"><%= noticium.author %></h1></a>
                 </div>
               </div>
               <p>Autor: <%= noticium.author %> - <%= noticium.created_at.strftime("%d/%m/%Y") %></p>

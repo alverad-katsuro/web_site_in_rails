@@ -1,8 +1,4 @@
-<br><br>
-
-<%= render 'show_modulo' %>
-
-<div class="field has-addons" id='botao_show_bot'>
+<div class="field has-addons" id='edit_back_destroy'>
     <div class="control">
       <%= (link_to 'Edit', edit_noticium_path(@noticium), class: 'button is-link') if user_signed_in? %>
     </div>
@@ -10,6 +6,6 @@
       <%= link_to 'Back', noticia_path, class: 'button is-link is-light is-larger' %>
     </div>
     <div class="control">
-      <%= (link_to 'Delete', @noticium, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-link is-danger') if user_signed_in? %>
+      <%= (link_to 'Destroy', @noticium, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-link is-danger') if user_signed_in? %>
     </div>
 </div>

@@ -3,7 +3,7 @@ class NoticiaController < ApplicationController
 
   # GET /noticia or /noticia.json
   def index
-    @noticia = Noticium.all
+    @noticia = Noticium.all.reverse
   end
 
   # GET /noticia/1 or /noticia/1.json

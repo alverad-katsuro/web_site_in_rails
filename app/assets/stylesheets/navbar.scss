@@ -1,3 +1,12 @@
+div.navbar-menu.is-active{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
 div#nav-links{
     text-align: center;
+}
+div#signs{
+    justify-content: center;
 }

@@ -19,7 +19,7 @@
           <i class="fas fa-upload"></i>
         </span>
         <span class="file-label">
-          Escolha a imagem de destaque…
+          Choose the Featured Image
         </span>
       </span>
     </label>
@@ -28,14 +28,14 @@
   </br>
  
   <div class="field">
-    <%= form.label 'Título', class: 'label' %>
+    <%= form.label 'Title', class: 'label' %>
     <div class="control">
       <%= form.text_field :title, class: 'input' %>
     </div>
   </div>
  
   <div class="field">
-    <%= form.label 'Autor', class: 'label' %>
+    <%= form.label 'Author', class: 'label' %>
     <div class="control">
       <%= form.text_field :author, class: 'input' %>
     </div>
@@ -43,16 +43,16 @@
  
  
   <div class="field">
-    <%= form.label 'Conteúdo', class: 'label' %>
+    <%= form.label 'Content', class: 'label' %>
     <%= form.rich_text_area :content %>
   </div>
  
   <div class="field is-grouped">
     <div class="control">
-      <%= form.submit 'Criar', class: 'button is-link' %>
+      <%= form.submit 'Create', class: 'button is-link' %>
     </div>
-    <div class="control">
-      <%= link_to 'Voltar', noticia_path, class: 'button is-link is-light' %>
+    <div class="Content">
+      <%= link_to 'Back', noticia_path, class: 'button is-link is-light' %>
     </div>
   </div>
 <% end %>

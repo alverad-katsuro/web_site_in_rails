@@ -1,0 +1,46 @@
+<%= form_with(model: member) do |form| %>
+  <% if member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+        <% member.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="file">
+    <label class="file-label">
+      <%= form.file_field :featured_image, class: 'file-input' %>
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Choose the Featured Image
+        </span>
+      </span>
+    </label>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :schooling %>
+    <%= form.text_field :schooling %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

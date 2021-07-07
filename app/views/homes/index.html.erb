@@ -1,5 +1,9 @@
 <%= render 'abouts/index' %>
 
-<a href='<%= noticia_path %>'><p class="title">News</p></a>
+<% unless @noticium == nil %>
 
-<%= render 'noticia/show_modulo' %>
+    <a href='<%= noticia_path %>'><p class="title">Latest Publication</p></a>
+
+    <%= render 'noticia/show_modulo' %>
+
+<% end %>

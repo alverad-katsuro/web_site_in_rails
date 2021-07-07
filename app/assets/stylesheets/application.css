@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+div#divisao_yeld{
+    padding-top: 60px;
+}
 nav.navbar.is-dark{
     position: fixed;
     width: 100%;

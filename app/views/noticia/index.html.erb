@@ -1,13 +1,11 @@
-    </br></br>
-
 <% if user_signed_in? %>
     <%= link_to 'New Noticium', new_noticium_path, class: 'button is-link is-medium is-fullwidth' %>
 <% end %>
 
   <tbody>
   
-    <br>
-    <p class="title">News</p>
+    <br>  
+    <p class="title">Publications</p>
     <br>
 
     <% @noticia.each do |noticium| %>
@@ -16,7 +14,7 @@
                 <div class="card">
             <div class="card-image">
               <figure class="image is-full is-marginless is-3by1">
-                <%= image_tag noticium.featured_image%>
+                <%= image_tag noticium.featured_image unless noticium.featured_image == nil %>
               </figure>
             </div>
             <div class="card-content">

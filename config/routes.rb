@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'homes#index'
+  resources :members
+  resources :visitors
   resources :noticia
   resources :homes
   resources :abouts

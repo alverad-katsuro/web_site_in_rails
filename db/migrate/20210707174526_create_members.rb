@@ -5,7 +5,6 @@ class CreateMembers < ActiveRecord::Migration[6.1]
       t.string :schooling
       t.string :email
       t.string :profession
-      t.string :about
 
       t.timestamps
     end

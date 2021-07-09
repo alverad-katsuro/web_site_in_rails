@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :collaborators
   root 'homes#index'
+  resources :collaborators
   resources :members
   resources :visitors
   resources :noticia

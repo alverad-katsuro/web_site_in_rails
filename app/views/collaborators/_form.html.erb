@@ -11,6 +11,27 @@
     </div>
   <% end %>
 
+  <div class='container is-max-desktop' id="foto_do_membro">
+    <figure class="image is-256x256">
+      <%= (image_tag collaborator.featured_image, class: "is-round") if collaborator.featured_image.attached? %>
+    </figure>
+  </div>
+  <div class="file" style='justify-content:center;'>
+    <label class="file-label">
+      <%= form.file_field :featured_image, class: 'file-input' %>
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          <%= "Choose a square featured image" %>
+        </span>
+      </span>
+    </label>
+  </div>
+
+
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -23,15 +44,21 @@
 
   <div class="field">
     <%= form.label :link %>
-    <%= form.text_field :link %>
+    <%= form.url_field :link %>
   </div>
 
   <div class="field">
     <%= form.label :contact %>
-    <%= form.text_field :contact %>
+    <%= form.email_field :contact %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field is-grouped">
+    <div class="control">
+      <%= form.submit 'Create', class: 'button is-link' %>
+    </div>
+    <div class="control">
+      <%= link_to 'Back', collaborators_path, class: 'button is-link is-light' %>
+    </div>
   </div>
+
 <% end %>

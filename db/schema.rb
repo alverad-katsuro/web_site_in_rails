@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 2021_07_09_011910) do
     t.string "schooling"
     t.string "email"
     t.string "profession"
-    t.string "about"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

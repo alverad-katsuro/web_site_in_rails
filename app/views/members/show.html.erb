@@ -1,19 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @member.name %>
 </p>
+  <br><br>
 
-<p>
-  <strong>Schooling:</strong>
-  <%= @member.schooling %>
-</p>
+  <figure class="image is-256x256" style="margin: 0 auto;">
+    <%= image_tag @member.featured_image, class: 'is-rounded' %>
+  </figure><br>
 
-<p>
-  <strong>Email:</strong>
-  <%= @member.email %>
-</p>
+  <div id='bloco_do_artigo' class='container is-max-desktop'>
+    <section id='corpo_do_artigo'>
+      <div class="columns">
+        <div class="column">
+          <p class="title"><%= @member.name %></p>
+        <p class="subtitle">Schooling: <%= @member.schooling %><br>Email: <%= @member.email %></p>
+        </div>
+      </div>
 
-<%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>
+      <br>
+
+      <div class="columns">
+        <div class="container is-max-desktop"><%= @member.content %>
+      </div>
+    </section>
+  </div>
+
+  <br><br>
+
+<div class="field has-addons" id='botao_show_bot'>
+    <div class="control">
+      <%= (link_to 'Edit', edit_member_path(@member), class: 'button is-link') if user_signed_in? %>
+    </div>
+    <div class="control">
+      <%= link_to 'Back', members_path, class: 'button is-link is-light is-larger' %>
+    </div>
+    <div class="control">
+      <%= (link_to 'Delete', @member, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-link is-danger') if user_signed_in? %>
+    </div>
+</div>

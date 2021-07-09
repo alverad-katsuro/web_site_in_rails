@@ -1,31 +1,75 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Members</h1>
+<% if user_signed_in? %>
+    <%= link_to 'New Member', new_member_path, class: 'button is-link is-medium is-fullwidth' %>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Schooling</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @members.each do |member| %>
-      <tr>
-        <td><%= member.name %></td>
-        <td><%= member.schooling %></td>
-        <td><%= member.email %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% unless @members.where("profession = 'Students'").empty? %>
+  <section class="hero is-link is-small">
+    <div class="hero-body">
+      <h1 class="title">
+        Members
+      </h1>
+      <p class="subtitle">
+        Teacher
+      </p>
+    </div>
+  </section>
+<% end %>
 
-<br>
 
-<%= link_to 'New Member', new_member_path %>
+<% @members.where("profession ='Teacher'").each_slice(4) do |members| %>
+    <div class="columns">
+        <% members.each do |member| %>
+        <div class="column">
+          <%= render 'show_index', member: member %>
+        </div>
+        <% end %>
+    </div>
+<% end %>
+
+<% unless @members.where("profession = 'Students'").empty? %>
+  <section class="hero is-link is-small">
+    <div class="hero-body">
+      <h1 class="title">
+      </h1>
+      <p class="subtitle">
+        Students
+      </p>
+    </div>
+  </section>
+<% end %>
+
+<% @members.where("profession = 'Students'").each_slice(4) do |members| %>
+    <div class="columns">
+        <% members.each do |member| %>
+        <div class="column">
+          <%= render 'show_index', member: member %>
+        </div>
+        <% end %>
+    </div>
+<% end %>
+
+<% unless @members.where("profession = 'Past Members'").empty? %>
+  <section class="hero is-link is-small">
+    <div class="hero-body">
+      <h1 class="title">
+      </h1>
+      <p class="subtitle">
+        Past Members
+      </p>
+    </div>
+  </section>
+<% end %>
+
+<% @members.where("profession = 'Past Members'").each_slice(4) do |members| %>
+    <div class="columns">
+        <% members.each do |member| %>
+        <div class="column">
+          <%= render 'show_index', member: member %>
+        </div>
+        <% end %>
+    </div>
+<% end %>
+

@@ -25,3 +25,17 @@ nav.navbar.is-dark{
 p.title{
     text-align: center;
 }
+
+p.subtitle.is-5{
+    text-align: center;
+}
+
+section.hero.is-link.is-small{
+    margin: 10px 0;
+}
+
+figure.image.is-256x256{
+    height: 256px;
+    width: 256px;
+    margin: 0 auto;
+}

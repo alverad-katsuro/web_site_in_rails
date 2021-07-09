@@ -4,6 +4,7 @@ class MembersController < ApplicationController
   # GET /members or /members.json
   def index
     @members = Member.all
+    @members_list = @members
   end
 
   # GET /members/1 or /members/1.json
@@ -64,6 +65,6 @@ class MembersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def member_params
-      params.require(:member).permit(:name, :schooling, :email)
+      params.require(:member).permit(:name, :schooling, :email, :profession, :about, :featured_image, :content)
     end
 end

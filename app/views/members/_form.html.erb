@@ -11,7 +11,12 @@
     </div>
   <% end %>
 
-  <div class="file">
+  <div class='container is-max-desktop' id="foto_do_membro">
+    <figure class="image is-256x256">
+      <%= (image_tag member.featured_image, class: "is-round") if member.featured_image.attached? %>
+    </figure>
+  </div>
+  <div class="file" style='justify-content:center;'>
     <label class="file-label">
       <%= form.file_field :featured_image, class: 'file-input' %>
       <span class="file-cta">
@@ -19,11 +24,13 @@
           <i class="fas fa-upload"></i>
         </span>
         <span class="file-label">
-          Choose the Featured Image
+          <%= "Choose a square featured image" %>
         </span>
       </span>
     </label>
   </div>
+
+
 
   <div class="field">
     <%= form.label :name %>
@@ -36,11 +43,27 @@
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.label :profession %>
+    <%= form.select :profession, ["Teacher", "Students", "Past Members"] %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
   </div>
+
+  <div class="field">
+    <%= form.label 'About', class: 'label' %>
+    <%= form.rich_text_area :content %>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <%= form.submit 'Create', class: 'button is-link' %>
+    </div>
+    <div class="control">
+      <%= link_to 'Back', members_path, class: 'button is-link is-light' %>
+    </div>
+  </div>
+
 <% end %>

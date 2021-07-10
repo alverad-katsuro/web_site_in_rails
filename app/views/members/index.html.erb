@@ -5,18 +5,18 @@
 <% end %>
 
 
-<% unless @members.where("profession = 'Students'").empty? %>
   <section class="hero is-link is-small">
     <div class="hero-body">
       <h1 class="title">
         Members
       </h1>
-      <p class="subtitle">
-        Teacher
-      </p>
+        <% unless @members.where("profession = 'Teacher'").empty? %>
+          <p class="subtitle">
+           Teacher
+          </p>
+        <% end %>
     </div>
   </section>
-<% end %>
 
 
 <% @members.where("profession ='Teacher'").each_slice(4) do |members| %>

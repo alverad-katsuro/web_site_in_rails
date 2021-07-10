@@ -4,7 +4,7 @@ class CreateCollaborators < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :institution
       t.string :link
-      t.string :contact
+      t.string :email
 
       t.timestamps
     end

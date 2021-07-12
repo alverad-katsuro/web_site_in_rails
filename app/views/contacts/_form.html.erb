@@ -1,0 +1,45 @@
+<%= form_with(model: contact) do |form| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+        <% contact.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :your_name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Send_to %>
+    <%= form.select :send_to, ["alfredogabriel.sousaoliveira@gmail.com"] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Subject %>
+    <%= form.text_field :subject %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Message', class: 'label' %>
+    <%= form.rich_text_area :message %>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <%= form.submit 'Send email', class: 'button is-link' %>
+    </div>
+  </div>
+
+<% end %>

@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+compbio@compbio.com
+computermodeling
+
+gem install mailcatcher

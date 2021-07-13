@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
   end
 
   # POST /contacts or /contacts.json
-  def create
+  def sending
     @contact = Contact.new(contact_params)
 
     respond_to do |format|
@@ -50,6 +50,6 @@ class ContactsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def contact_params
-      params.require(:contact).permit(:name, :email, :subject, :send_to, :message)
+      params.require(:contact).permit(:name, :email, :subject, :send_to_one, :send_to_two, :send_to_three, :send_to_four, :message)
     end
 end

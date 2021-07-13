@@ -1,15 +1,9 @@
-# app/views/order_mailer/new_contact_email.text.erb
-
-
-You got a new order from <%= @contact.name %>!
-=========================================
 Contact details
 --------------------------
 
 Name: <%= @contact.name %>
-Email: <%= @contact.email %>
-Send To: <%= @contact.send_to %>
-Subject: <%= @contact.subject %>
+Email from: <%= @contact.email %>
+Send To: <%= "#{@contact.send_to_one}, #{@contact.send_to_two}, #{@contact.send_to_three}, #{@contact.send_to_four}" %>
 
 
 Message:

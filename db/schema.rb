@@ -62,7 +62,10 @@ ActiveRecord::Schema.define(version: 2021_07_12_220732) do
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "send_to"
+    t.string "send_to_one"
+    t.string "send_to_two"
+    t.string "send_to_three"
+    t.string "send_to_four"
     t.string "subject"
     t.text "message"
     t.datetime "created_at", precision: 6, null: false

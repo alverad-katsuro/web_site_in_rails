@@ -21,9 +21,26 @@
     <%= form.email_field :email %>
   </div>
 
-  <div class="field">
-    <%= form.label :Send_to %>
-    <%= form.select :send_to, ["alfredogabriel.sousaoliveira@gmail.com", "lameira@ufpa.br", "anderson@ufpa.br", "nahum@ufpa.br", "rogerio@ufpa.br"] %>
+  <div class='cointainer'>
+    <div class="field">
+        <%= form.check_box :send_to_one %>
+        <%= form.label :send_to_two, "lameira@ufpa.br" %>
+    </div>
+
+    <div class="field">
+        <%= form.check_box :send_to_two %>
+        <%= form.label :send_to_three, "anderson@ufpa.br" %>
+    </div>
+
+    <div class="field">
+        <%= form.check_box :send_to_three %>
+        <%= form.label :send_to_fout, "nahum@ufpa.br" %>
+    </div>
+
+    <div class="field">
+        <%= form.check_box :send_to_four %>
+        <%= form.label :send_to_one, "rogerio@ufpa.br" %>
+    </div>
   </div>
 
   <div class="field">
@@ -33,7 +50,7 @@
 
   <div class="field">
     <%= form.label 'Message', class: 'label' %>
-    <%= form.rich_text_area :message %>
+    <%= form.rich_text_area :message, value: "Send attachments at the end of the message" %>
   </div>
 
   <div class="field is-grouped">

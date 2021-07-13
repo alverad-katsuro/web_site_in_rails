@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :visitors
   root 'homes#index'
   get "/contacts", to: "contacts#send_message"
-  post "contacts", controller: "contacts", action: "create"
+  post "contacts", controller: "contacts", action: "sending"
   get "/contacts/show_all", to: "contacts#show_all"
   get "/contacts/show/:id", to: "contacts#show"
   get "/contacts/destroy/:id", to: "contacts#destroy"  

@@ -3,13 +3,17 @@
 one:
   name: MyString
   email: MyString
-  send_to: MyString
+  send_to_one: MyString
+  send_to_two: MyString
+  send_to_three: MyString
+  send_to_four: MyString
   subject: MyString
-  message: MyText
 
 two:
   name: MyString
   email: MyString
-  send_to: MyString
+  send_to_one: MyString
+  send_to_two: MyString
+  send_to_three: MyString
+  send_to_four: MyString
   subject: MyString
-  message: MyText

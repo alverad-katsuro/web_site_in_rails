@@ -1,20 +1,11 @@
-# app/views/order_mailer/new_contact_email.html.erb
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p>You got a new order from <%= @contact.name %>!</p>
-    <p>
-    Order details<br>
-    --------------------------
-    </p>
     <p>Email: <%= @contact.email %></p>
-    <p>Send To: <%= @contact.send_to %></p>
-    <p>Subject: <%= @contact.subject %></p>
+    <p>Send To: <%= "#{@contact.send_to_one}, #{@contact.send_to_two}, #{@contact.send_to_three}, #{@contact.send_to_four}" %></p>
     <p>
 
     Message:<br>

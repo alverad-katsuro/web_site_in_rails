@@ -16,8 +16,11 @@
         <a class="navbar-item" href='<%= noticia_path %>'>Publications</a>
         <a class="navbar-item" href='<%= members_path %>'>Members</a>
         <a class="navbar-item" href='<%= collaborators_path %>'>Collaborators</a>
-        <a class="navbar-item" href='<%= root_path %>'>Visitors</a>
+        <a class="navbar-item" href='<%= visitors_path %>'>Visitors</a>
         <a class="navbar-item" href='<%= contacts_path %>'>Contact</a>
+        <% if user_signed_in? %>
+          <a class="navbar-item" href='<%= contacts_show_all_path %>'>All Contacts</a>
+        <% end %>
         <a class="navbar-item" href='<%= abouts_path %>'>About</a>
       </div>
       <div class="navbar-end">

@@ -1,28 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
 </p>
+  <br><br>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+  <div id='bloco_do_artigo' class='container is-max-desktop'>
+    <section id='corpo_do_artigo'>
+      <div class="columns">
+        <div class="column">
+          <p class="title"><%= @contact.subject %></p>
+          <p class="subtitle">Name: <%= @contact.name %><br>Email: <%= @contact.email %></p>
+        </div>
+      </div>
 
-<p>
-  <strong>Send to:</strong>
-  <%= @contact.send_to %>
-</p>
+      <br>
+        <div class="container is-max-desktop"> <%= @contact.message %> </div>
+      <div class="columns">
+      </div>
+    </section>
+  </div>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @contact.subject %>
-</p>
+  <br><br>
 
-<p>
-  <strong>Message:</strong>
-  <%= @contact.message %>
-</p>
 
-<%= link_to 'Back', contacts_path %>
+<div class="field has-addons" id='botao_show_bot'>
+    <div class="control">
+      <%= link_to 'Back', contacts_show_all_path, class: 'button is-link is-light is-larger' %>
+    </div>
+    <div class="control">
+      <%= (link_to 'Delete', "/contacts/destroy/#{@contact[:id]}", method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-link is-danger') if user_signed_in? %>
+    </div>
+</div>

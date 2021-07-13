@@ -1,2 +1,48 @@
-<h1>Visitors#index</h1>
-<p>Find me in app/views/visitors/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<% if user_signed_in? %>
+    <%= link_to 'New Visitor', new_visitor_path, class: 'button is-link is-medium is-fullwidth' %>
+<% end %>
+
+
+<p class="title">Visitors</p>
+
+<div class="table-container">
+  <table class="table is-fullwidth is-hoverable is-striped" style="margin: 0 auto;">
+    <thead>
+      <tr>
+        <th class="title is-5">Name</th>
+        <th class="title is-5">University</th>
+        <th class="title is-5">Country</th>
+        <th class="title is-5">Joined</th>
+        <th class="title is-5">Depart</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th class="title is-5">Name</th>
+        <th class="title is-5">University</th>
+        <th class="title is-5">Country</th>
+        <th class="title is-5">Joined</th>
+        <th class="title is-5">Depart</th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <% @visitors.each do |visitor| %>
+        <tr>
+          <% if user_signed_in? %>
+
+            <th><a href="<%= visitor_path(id: visitor.id) %>"><h1 class="title is-6"><%= visitor.name %></h1></a></th>
+          <% else %>
+            <th class="subtitle is-6"><%= visitor.name %></th>
+          <% end %>
+          <td class="subtitle is-6"><%= visitor.university %></td>
+          <td class="subtitle is-6"><%= visitor.country %></td>
+          <td class="subtitle is-6"><%= visitor.begin %></td>
+          <td class="subtitle is-6"><%= visitor.depart %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

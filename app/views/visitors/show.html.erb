@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<div id='bloco_do_artigo' class='container is-max-desktop'>
+    <section id='corpo_do_artigo'>
+      <div class="columns">
+        <div class="column">
+          <p class="title"><%= @visitor.name %></p>
+        </div>
+      </div>
+
+      <br><br>
+
+      <div class="columns">
+        <p class="subtitle">University: <%= @visitor.university %><br>Country: <%= @visitor.country %><br>Begin: <%= @visitor.begin %><br>Depart: <%= @visitor.depart %></p>
+      </div>
+    </section>
+  </div>
+
+<div class="field has-addons" id='botao_show_bot'>
+    <div class="control">
+      <%= (link_to 'Edit', edit_visitor_path(@visitor), class: 'button is-link') if user_signed_in? %>
+    </div>
+    <div class="control">
+      <%= link_to 'Back', visitors_path, class: 'button is-link is-light is-larger' %>
+    </div>
+    <div class="control">
+      <%= (link_to 'Delete', @visitor, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-link is-danger') if user_signed_in? %>
+    </div>
+</div>
